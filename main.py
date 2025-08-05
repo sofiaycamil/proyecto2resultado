@@ -13,7 +13,7 @@ def guardar_en_bd(valor):
 def mostrar_registros():
     cursor.execute("SELECT * FROM resultado")
     registros = cursor.fetchall()
-    texto = "\n".join([f"ID: {r[0]}, Resultado: {r[1]}" for r in registros])
+    texto = " ".join([f"ID: {r[0]}, Resultado: {r[1]}" for r in registros])
     messagebox.showinfo("Registros", texto if texto else "No hay registros")
 
 cursor.execute('''
@@ -104,5 +104,6 @@ Button(marco, text="Restar", command=restar).pack(side="left", fill=X, expand=YE
 Button(marco, text="Dividir", command=dividir).pack(side="left", fill=X, expand=YES)
 Button(marco, text="Multiplicar", command=multiplicar).pack(side="left", fill=X, expand=YES)
 Button(marco, text="Ver registros", command=mostrar_registros).pack(side="left", fill=X, expand=YES)
+
 
 ventana.mainloop()
